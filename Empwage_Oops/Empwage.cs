@@ -29,7 +29,7 @@ namespace Empwage_Oops
         }
 
         /// <summary>
-        /// Code to get Daily Employee wage..
+        /// Code to get PartTime Employee and wage..
         /// </summary>
         public void DailyWage()
         {
@@ -38,9 +38,9 @@ namespace Empwage_Oops
             Random random = new Random();
             int empCheck = random.Next(0, 2);
             if (empCheck == IS_FULL_TIME)
-                dailyHours = 8;
+                dailyHours = 16;
             else if (empCheck == IS_PART_TIME)
-                dailyHours = 4;
+                dailyHours = 8;
             dailyWage = dailyHours * RATE_PER_HOUR;
             Console.WriteLine("\n Employee Daily Wage: " + dailyWage);
         }
