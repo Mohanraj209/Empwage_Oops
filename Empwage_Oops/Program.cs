@@ -13,6 +13,7 @@ namespace Empwage_Oops
             Console.WriteLine("--------**** Welcome to Employee Wage Computation ****--------");
             EmployeeWage empWage = new EmployeeWage();
             empWage.Attendance();
+            empWage.DailyWage();
         }
     }
 }
