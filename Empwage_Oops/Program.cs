@@ -11,6 +11,8 @@ namespace Empwage_Oops
         public static void Main()
         {
             Console.WriteLine("--------**** Welcome to Employee Wage Computation ****--------");
+            EmployeeWage empWage = new EmployeeWage();
+            empWage.Attendance();
         }
     }
 }
