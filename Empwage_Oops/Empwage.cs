@@ -14,6 +14,7 @@ namespace Empwage_Oops
         const int IS_PRESENT = 1;
         const int IS_ABSENT = 0;
         const int RATE_PER_HOUR = 20;
+        const int WORKING_DAYS_PER_MONTH = 20;
 
         /// <summary>
         /// Code to get Attendence..
@@ -29,28 +30,43 @@ namespace Empwage_Oops
         }
 
         /// <summary>
-        /// Code to get Daily Employee wage using switch..
+        /// Code to get Daily Employee wage for a month using switch..
         /// </summary>
         public void DailyWage()
         {
-            int dailyWage = 0;
-            int dailyHours = 0;
-            Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            switch (empCheck)
-            {
-                case IS_FULL_TIME:
-                    dailyHours = 16;
-                    break;
-                case IS_PART_TIME:
-                    dailyHours = 8;
-                    break;
-                default:
-                    dailyHours = 0;
-                    break;
+            //variables
+            int empHrs = 0;
+            int empWage = 0;
+            int totalEmpWage = 0;
+           
+                for (int day = 0; day < WORKING_DAYS_PER_MONTH; day++)
+                {
+
+                    Random random = new Random();
+                    int empCheck = random.Next(0, 3);
+                    switch (empCheck)
+                    {
+                        case IS_PART_TIME:
+                            empHrs = 8;
+                            break;
+                        case IS_FULL_TIME:
+                            empHrs = 16;
+                            break;
+                        default:
+                            empHrs = 0;
+                            break;
+                    }
+                    empWage = empHrs * RATE_PER_HOUR;
+                    totalEmpWage += empWage;   //int a=6; a+=10;a=a+10
+                    Console.WriteLine("Emp Wage: " + empWage);
+                }
+                Console.WriteLine("Total Emp Wage: " + totalEmpWage);
+
             }
-            dailyWage = dailyHours * RATE_PER_HOUR;
-            Console.WriteLine("\n Employee Daily Wage: " + dailyWage);
+
         }
+
     }
+
 }
+
